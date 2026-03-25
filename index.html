@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechPro — Atelier Flexbox vs Grid</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- BLOC 1 : NAVBAR — Flexbox -->
+    <section class="section-wrapper">
+        <h2 class="section-label">Navigation principale</h2>
+        <nav class="navbar">
+            <div class="navbar__logo">TechPro</div>
+            <div class="navbar__links">
+                <a href="#">Accueil</a>
+                <a href="#">Produits</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="navbar-actions">
+                <a href="#" class="btn-link">Se connecter</a>
+                <button class="btn">S'inscrire</button>
+            </div>
+            <button class="navbar__burger">&#9776;</button>
+        </nav>
+    </section>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>Flexbox</strong> pour la navbar parce que les éléments sont tous sur une ligne. Ca permet de les aligner facilement avec justify-content et align-items.</p>
+
+    <!-- BLOC 2 : FORMATIONS — Grid -->
+    <section class="section-wrapper">
+        <h2 class="section-label">Nos formations populaires</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-card__img">JavaScript</div>
+                <div class="card-body">
+                    <div class="course-card__meta"><span class="tag tag--dev">Développement</span><span class="course-card__duration">12h de cours</span></div>
+                    <h3 class="course-card__title">JavaScript Moderne</h3>
+                    <p class="course-card__desc">Maîtrisez ES6+, async/await et les frameworks modernes</p>
+                    <div class="course-card__footer"><span class="course-card__price">299 €</span><button class="btn btn--sm">S'inscrire</button></div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__img">React</div>
+                <div class="course-card__body">
+                    <div class="course-card__meta"><span class="tag tag--framework">Framework</span><span class="course-card__duration">15h de cours</span></div>
+                    <h3 class="course-card__title">React Avancé</h3>
+                    <p class="course-card__desc">Créez des applications web performantes avec React</p>
+                    <div class="course-card__footer"><span class="course-card__price">399 €</span><button class="btn btn--sm">S'inscrire</button></div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__img">Node.js</div>
+                <div class="course-card__body">
+                    <div class="course-card__meta"><span class="tag tag--backend">Backend</span><span class="course-card__duration">18h de cours</span></div>
+                    <h4 class="course-card__title">Node.js & Express</h4>
+                    <p class="course-card__desc">Développez des API REST et applications serveur</p>
+                    <div class="course-card__footer"><span class="course-card__price">449 €</span><button class="btn btn--sm">S'inscrire</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai mis Grid ici car il y a 3 cartes côte à côte. Avec repeat(3, 1fr) les colonnes font la même taille. J'aurais pu utiliser flexbox aussi mais grid c'est plus simple pour aligner les hauteurs
+        automatiquement.</p>
+
+    <!-- BLOC 3 : ARTICLE À LA UNE — Grid -->
+    <section class="section-wrapper">
+        <h2 class="section-label">Article à la une</h2>
+        <div class="featured-article">
+            <div class="featured-article__img">Intelligence Artificielle</div>
+            <div class="featured-article__content">
+                <div class="featured-article__meta"><span class="tag">Technologies</span><span class="read-time">10 min de lecture</span></div>
+                <h3 class="featured-article__title">L'Impact de l'IA sur le Développement Web en 2024</h3>
+                <p class="featured-article__desc">L'intelligence artificielle révolutionne la façon dont nous concevons et développons des applications web. Découvrez les dernières innovations et leur impact sur l'industrie du développement...</p>
+                <div class="featured-article__author">
+                    <div class="author__avatar">ML</div>
+                    <div class="author__info">
+                        <span class="author__name">Marie Laurent</span>
+                        <span class="author__role">Lead Developer @ TechPro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé Grid pour cet article car il y a une image à gauche et du texte à droite. Les deux colonnes ont des tailles différentes donc grid c'est plus adapté que flexbox je pense.</p>
+
+    <!-- BLOC 4 : TECHNOLOGIES — Flexbox -->
+    <section class="section-wrapper">
+        <h2 class="section-label">Technologies maîtrisées</h2>
+        <div class="tags-list">
+            <span class="tag-pill">React.js</span>
+            <span class="tag-pill">Vue.js</span>
+            <span class="tag-pill">Node.js</span>
+            <span class="tag-pill">TypeScript</span>
+            <span class="tag-pill">Python</span>
+            <span class="tag-pill">Docker</span>
+            <span class="tag-pill">AWS</span>
+        </div>
+    </section>
+    <p class="justification"><span class="justification__label">Justification :</span> Flexbox pour les tags car ils sont sur une ligne et si y'en a trop ils reviennent à la ligne tout seuls. C'est plus simple que de faire une grid pour ça.</p>
+
+    <!-- BLOC 5 : PROJETS — Grid -->
+    <section class="section-wrapper">
+        <h2 class="section-label">Nos projets réalisés</h2>
+        <div class="projects-grid">
+            <div class="project-card">Inspiration<br>Visuelle</div>
+            <div class="project-card">Grille<br>Créative</div>
+            <div class="project-card">Moodboard<br>Produits</div>
+            <div class="project-card">Univers en<br>images</div>
+            <div class="project-card project-card--large">Collection en un<br>coup d'œil</div>
+        </div>
+    </section>
+    <p class="justification"><span class="justification__label">Justification :</span> Grid obligatoire ici parce que la dernière carte prend 2 colonnes sur 3. Avec flexbox c'est impossible de faire ça proprement. J'ai utilisé grid-column span 2 pour la grande carte.</p>
+
+</body>
+
+</html>
