@@ -379,6 +379,7 @@ body {
     color: var(--muted);
     border-radius: 100px;
     border: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
 }
 
 .tag-pill:hover {
@@ -408,6 +409,7 @@ body {
     text-align: center;
     line-height: 1.4;
     min-height: 150px;
+    transition: opacity 0.15s, transform 0.15s;
 }
 
 .project-card:hover {
@@ -454,6 +456,9 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* === RESPONSIVE 420px === */
 
 @media (max-width: 420px) {
     .projects-grid {

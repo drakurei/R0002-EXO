@@ -22,14 +22,14 @@
                 <a href="#">Services</a>
                 <a href="#">Contact</a>
             </div>
-            <div class="navbar-actions">
+            <div class="navbar__actions">
                 <a href="#" class="btn-link">Se connecter</a>
                 <button class="btn">S'inscrire</button>
             </div>
             <button class="navbar__burger">&#9776;</button>
         </nav>
     </section>
-    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>Flexbox</strong> pour la navbar parce que les éléments sont tous sur une ligne. Ca permet de les aligner facilement avec justify-content et align-items.</p>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>Flexbox</strong> car les éléments sont alignés sur <em>un seul axe horizontal</em>. <code>justify-content: space-between</code> répartit les groupes et <code>align-items: center</code>        les centre verticalement. Grid serait inutilement complexe pour une disposition 1D.</p>
 
     <!-- BLOC 2 : FORMATIONS — Grid -->
     <section class="section-wrapper">
@@ -37,7 +37,7 @@
         <div class="courses-grid">
             <div class="course-card">
                 <div class="course-card__img">JavaScript</div>
-                <div class="card-body">
+                <div class="course-card__body">
                     <div class="course-card__meta"><span class="tag tag--dev">Développement</span><span class="course-card__duration">12h de cours</span></div>
                     <h3 class="course-card__title">JavaScript Moderne</h3>
                     <p class="course-card__desc">Maîtrisez ES6+, async/await et les frameworks modernes</p>
@@ -57,15 +57,15 @@
                 <div class="course-card__img">Node.js</div>
                 <div class="course-card__body">
                     <div class="course-card__meta"><span class="tag tag--backend">Backend</span><span class="course-card__duration">18h de cours</span></div>
-                    <h4 class="course-card__title">Node.js & Express</h4>
+                    <h3 class="course-card__title">Node.js & Express</h3>
                     <p class="course-card__desc">Développez des API REST et applications serveur</p>
                     <div class="course-card__footer"><span class="course-card__price">449 €</span><button class="btn btn--sm">S'inscrire</button></div>
                 </div>
             </div>
         </div>
     </section>
-    <p class="justification"><span class="justification__label">Justification :</span> J'ai mis Grid ici car il y a 3 cartes côte à côte. Avec repeat(3, 1fr) les colonnes font la même taille. J'aurais pu utiliser flexbox aussi mais grid c'est plus simple pour aligner les hauteurs
-        automatiquement.</p>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>CSS Grid</strong> car la structure est en <em>3 colonnes égales avec hauteurs alignées automatiquement</em>. <code>grid-template-columns: repeat(3, 1fr)</code> distribue
+        l'espace équitablement. Avantage clé sur Flexbox : toutes les cartes partagent la même hauteur sans forcer de <code>height: 100%</code>.</p>
 
     <!-- BLOC 3 : ARTICLE À LA UNE — Grid -->
     <section class="section-wrapper">
@@ -75,7 +75,7 @@
             <div class="featured-article__content">
                 <div class="featured-article__meta"><span class="tag">Technologies</span><span class="read-time">10 min de lecture</span></div>
                 <h3 class="featured-article__title">L'Impact de l'IA sur le Développement Web en 2024</h3>
-                <p class="featured-article__desc">L'intelligence artificielle révolutionne la façon dont nous concevons et développons des applications web. Découvrez les dernières innovations et leur impact sur l'industrie du développement...</p>
+                <p class="featured-article__excerpt">L'intelligence artificielle révolutionne la façon dont nous concevons et développons des applications web. Découvrez les dernières innovations et leur impact sur l'industrie du développement...</p>
                 <div class="featured-article__author">
                     <div class="author__avatar">ML</div>
                     <div class="author__info">
@@ -86,7 +86,8 @@
             </div>
         </div>
     </section>
-    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé Grid pour cet article car il y a une image à gauche et du texte à droite. Les deux colonnes ont des tailles différentes donc grid c'est plus adapté que flexbox je pense.</p>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>CSS Grid</strong> car le layout est en <em>deux colonnes asymétriques</em> : image fixe (260px) et contenu flexible. <code>grid-template-columns: 260px 1fr</code> exprime
+        cette proportion clairement. En mobile, la grille passe en <code>1fr</code> pour empiler les blocs.</p>
 
     <!-- BLOC 4 : TECHNOLOGIES — Flexbox -->
     <section class="section-wrapper">
@@ -101,7 +102,8 @@
             <span class="tag-pill">AWS</span>
         </div>
     </section>
-    <p class="justification"><span class="justification__label">Justification :</span> Flexbox pour les tags car ils sont sur une ligne et si y'en a trop ils reviennent à la ligne tout seuls. C'est plus simple que de faire une grid pour ça.</p>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>Flexbox</strong> car les tags s'alignent horizontalement et <em>reviennent à la ligne automatiquement</em> avec <code>flex-wrap: wrap</code>. Grid imposerait un nombre
+        de colonnes fixe, inadapté ici car le nombre de tags peut varier.</p>
 
     <!-- BLOC 5 : PROJETS — Grid -->
     <section class="section-wrapper">
@@ -114,7 +116,8 @@
             <div class="project-card project-card--large">Collection en un<br>coup d'œil</div>
         </div>
     </section>
-    <p class="justification"><span class="justification__label">Justification :</span> Grid obligatoire ici parce que la dernière carte prend 2 colonnes sur 3. Avec flexbox c'est impossible de faire ça proprement. J'ai utilisé grid-column span 2 pour la grande carte.</p>
+    <p class="justification"><span class="justification__label">Justification :</span> J'ai utilisé <strong>CSS Grid</strong> car le layout est <em>bidimensionnel et asymétrique</em> : 3 cartes sur la première ligne, puis une petite et une grande (<code>grid-column: span 2</code>)
+        sur la seconde. Ce placement 2D est impossible avec Flexbox.</p>
 
 </body>
 
